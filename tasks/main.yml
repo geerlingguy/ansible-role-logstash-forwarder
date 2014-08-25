@@ -20,7 +20,11 @@
 - name: Install logstash-forwarder.
   apt: pkg=logstash-forwarder state=present
 
-# TODO - Install init script? Does it come with one?
+- name: Install logstash-forwarder init script.
+  get_url:
+    url: https://raw.github.com/elasticsearch/logstash-forwarder/master/logstash-forwarder.init
+    dest: /etc/init.d/logstash-forwarder
+    mode: 655
 
 - name: Add Logstash user to adm group (Debian).
   user:
@@ -41,3 +45,6 @@
     dest: "{{ logstash_ssl_dir }}/{{ logstash_forwarder_ssl_certificate_file }}"
     mode: 644
   notify: restart logstash-forwarder
+
+- name: Ensure logstash-forwarder is started and enabled on boot.
+  service: name=logstash-forwarder state=started enabled=yes
