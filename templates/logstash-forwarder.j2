@@ -1,0 +1,10 @@
+{
+  "network": {
+    "servers": [ "{{ logstash_forwarder_server }}:{{ logstash_forwarder_server_port }}" ],
+    "timeout": 15,
+    "ssl ca": "{{ logstash_ssl_dir }}/{{ logstash_forwarder_ssl_certificate_file }}"
+  },
+  "files": [
+    {{ logstash_forwarder_files | to_json }}
+  ]
+}
