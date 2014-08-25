@@ -1,0 +1,3 @@
+---
+logstash_ssl_dir: /etc/pki/logstash
+logstash_forwarder_ssl_certificate_file: logstash-forwarder-example.crt
