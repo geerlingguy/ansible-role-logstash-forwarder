@@ -16,10 +16,24 @@ None.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    logstash_listen_port_tcp: 5000
-    logstash_listen_port_udp: 5000
+    logstash_forwarder_logstash_server: localhost
+    logstash_forwarder_logstash_server_port: 5000
 
-The TCP and UDP ports over which logstash will listen for syslog messages.
+The central Logstash server/port to which logstash-forwarder should connect.
+
+    logstash_ssl_dir: /etc/pki/logstash
+    logstash_forwarder_ssl_certificate_file: logstash-forwarder-example.crt
+
+The location and filename of the SSL certificate logstash-forwarder will use to authenticate to the logstash server.
+
+    logstash_forwarder_files:
+      - paths:
+          - /var/log/syslog
+          - /var/log/auth.log
+        fields:
+          type: syslog
+
+Configuration of files monitored by logstash-forwarder. You can add more sets of files by adding to the list with another set of files; see `defaults/main.yml` for an example.
 
 ## Dependencies
 
