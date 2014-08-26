@@ -2,11 +2,9 @@
 
 [![Build Status](https://travis-ci.org/geerlingguy/ansible-role-logstash-forwarder.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-logstash-forwarder)
 
-An Ansible Role that installs Logstash Forwarder on Debian/Ubuntu.
+An Ansible Role that installs Logstash Forwarder on RedHat/CentOS or Debian/Ubuntu.
 
-**Note**: This role is under active development and is not considered stable quite yet. I am working on making sure it runs across a wider variety of platforms, and also will work with different kinds of workflows you may have. Please file issues on GitHub if you find a problem!
-
-**Security Note**: Until this role reaches a stable release, please consider it insecure, and do not use it on any production systems. Things like SSL and certificates are not being used for message authentication at this time!
+**Note**: This role is well-tested on Debian/Ubuntu, but is still undergoing development for RedHat/CentOS. You've been warned!
 
 ## Requirements
 
@@ -28,7 +26,7 @@ The location and filename of the SSL certificate logstash-forwarder will use to 
 
     logstash_forwarder_files:
       - paths:
-          - /var/log/syslog
+          - /var/log/messages
           - /var/log/auth.log
         fields:
           type: syslog

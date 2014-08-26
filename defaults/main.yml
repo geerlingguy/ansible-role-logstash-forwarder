@@ -7,7 +7,7 @@ logstash_forwarder_ssl_certificate_file: logstash-forwarder-example.crt
 
 logstash_forwarder_files:
   - paths:
-      - /var/log/syslog
+      - /var/log/messages
       - /var/log/auth.log
     fields:
       type: syslog
