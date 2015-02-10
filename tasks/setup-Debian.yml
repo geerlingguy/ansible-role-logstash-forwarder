@@ -25,4 +25,4 @@
   copy:
     src: logstash-forwarder.deb.init
     dest: /etc/init.d/logstash-forwarder
-    mode: 0655
+    mode: 0755
