@@ -22,7 +22,7 @@ The central Logstash server/port to which logstash-forwarder should connect.
     logstash_ssl_dir: /etc/pki/logstash
     logstash_forwarder_ssl_certificate_file: logstash-forwarder-example.crt
 
-The location and filename of the SSL certificate logstash-forwarder will use to authenticate to the logstash server.
+The location and filename of the SSL certificate logstash-forwarder will use to authenticate to the logstash server. For the `logstash_forwarder_ssl_certificate_file`, you can provide a path relative to the role directory, or an absolute path to the file.
 
     logstash_forwarder_files:
       - paths:
