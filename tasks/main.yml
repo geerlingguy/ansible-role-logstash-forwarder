@@ -28,7 +28,7 @@
 - name: Copy SSL key and cert for logstash-forwarder.
   copy:
     src: "{{ logstash_forwarder_ssl_certificate_file }}"
-    dest: "{{ logstash_ssl_dir }}/{{ logstash_forwarder_ssl_certificate_file }}"
+    dest: "{{ logstash_ssl_dir }}/{{ logstash_forwarder_ssl_certificate_file | basename }}"
     mode: 0644
   notify: restart logstash-forwarder
 
