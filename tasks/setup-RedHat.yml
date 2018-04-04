@@ -11,7 +11,7 @@
     mode: 0644
 
 - name: Install logstash-forwarder.
-  yum: pkg=logstash-forwarder state=installed
+  yum: pkg=logstash-forwarder state=present
 
 # See: http://goo.gl/cz9Lnd
 - name: Install logstash-forwarder init script.
