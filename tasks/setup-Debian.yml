@@ -15,7 +15,7 @@
 
 - name: Update apt cache if repository just added.
   apt: update_cache=yes
-  when: logstash_forwarder_installed.stat.exists == false
+  when: not logstash_forwarder_installed.stat.exists
 
 - name: Install logstash-forwarder.
   apt: pkg=logstash-forwarder state=present
