@@ -1,5 +1,7 @@
 # Ansible Role: Logstash Forwarder
 
+**DEPRECATED**: This role is deprecated, as Logstash Forwarder has been deprecated and is replaced by Filebeat. Please use the [`geerlingguy.filebeat`](https://github.com/geerlingguy/ansible-role-filebeat) role instead.
+
 [![Build Status](https://travis-ci.org/geerlingguy/ansible-role-logstash-forwarder.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-logstash-forwarder)
 
 An Ansible Role that installs Logstash Forwarder on RedHat/CentOS or Debian/Ubuntu.
